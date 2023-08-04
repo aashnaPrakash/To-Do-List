@@ -28,6 +28,14 @@
 
 
 img {
-  height: 200px;
-  margin: 50px;
+  height: 250px;
+  margin: 50px auto;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+.buttons {
+  width: 150px;
 }

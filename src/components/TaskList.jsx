@@ -19,15 +19,15 @@ function TaskList({ tasks, updateTask, deleteTask, checkTask }) {
                     {tasks.map((task) => (
                         <tr key={task.id} style={{verticalAlign: 'middle'}}>
                             <td><div className="form-check">
-                                <input className="form-check-input" type="checkbox"/>
+                                <input className="form-check-input" type="checkbox" onChange={() => checkTask(task.id)}/>
                             </div></td>
-                            <td className="w-75">{task.body}</td>
-                            <td className="w-25">
+                            <td className="w-75"><p style={task.check?{textDecoration: "line-through"}:{}}>{task.body}</p></td>
+                            <td className="w-25" style={{textAlign: "end"}}>
                                 <DeleteTask
                                     task={task}
                                     deleteTask={deleteTask}
                                 />
-                                <UpdateTask task={task} updateTask={updateTask} />
+                                <UpdateTask tasks={tasks} task={task} updateTask={updateTask} />
                             </td>
                         </tr>))}
                 </tbody>

@@ -8,13 +8,15 @@ function AddTask({ addTask }) {
     function addNewTask(e) {
         e.preventDefault();
         const taskText = content.trim();
-        const task = {
-            id: nanoid(),
-            body: taskText,
-            check: false
-        };
-
-        addTask(task);
+        if(taskText.length){
+            const task = {
+                id: nanoid(),
+                body: taskText,
+                check: false
+            };
+    
+            addTask(task);
+        }
         setContent("");
     }
 
@@ -26,8 +28,8 @@ function AddTask({ addTask }) {
                         onChange={(e) => setContent(e.target.value)} />
                 </div>
             </div>
-            <div className="col-3">
-                <button type="button" className="btn btn-primary" onClick={addNewTask}>Add</button>
+            <div className="col-2" style={{textAlign:"end"}}>
+                <button type="button" className="btn btn-primary buttons" onClick={addNewTask}>Add</button>
             </div>
         </form>
 

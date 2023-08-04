@@ -23,7 +23,7 @@ function App() {
   }
 
   function checkTask(id) {
-    const newTasksCheck = tasks.map((task, index, array) => {
+    const newTasksCheck = tasks.map((task) => {
       if (task.id === id) {
         task.check = !task.check;
       }
@@ -32,11 +32,11 @@ function App() {
     setTasks(newTasksCheck);
   }
 
-  function updateTask(id, body, onClose) {
+  function updateTask(id, body) {
     const info = body.trim();
-    const newTasksUpdate = tasks.map((task, index, array) => {
+    const newTasksUpdate = tasks.map((task) => {
       if (task.id === id) {
-        task.body = body;
+        task.body = info;
         task.check = false;
       }
       return task;
@@ -46,14 +46,14 @@ function App() {
   }
 
   return (
-    <section className="vh-100" style={{ background: "#eee" }}>
+    <section className="vh-100">
       <div className="container py-5 h-800">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col col-lg-9 col-xl-7">
             <div className="card rounded-3">
               <div className="card-body p-4">
 
-                <h4 className="text-center my-3 pb-3">To Do List</h4>
+                <h2 className="text-center my-3 pb-3">To Do List</h2>
 
                 <AddTask addTask={addTask} />
                 <TaskList
