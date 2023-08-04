@@ -1,7 +1,7 @@
 # To Do List App
-Features - 
-Adding new todos
-Editing existing todos
+Features\
+Adding new todos\
+Editing existing todos\
 Deleting todos
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
