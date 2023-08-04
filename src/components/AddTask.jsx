@@ -22,14 +22,14 @@ function AddTask({ addTask }) {
 
     return (
         <form className="row g-3 mb-4 pb-2">
-            <div className="col-9">
+            <div className="col-10">
                 <div className="form-outline">
                     <input type="text" className="form-control" value={content}
                         onChange={(e) => setContent(e.target.value)} />
                 </div>
             </div>
-            <div className="col-2" style={{textAlign:"end"}}>
-                <button type="button" className="btn btn-primary buttons" onClick={addNewTask}>Add</button>
+            <div className="col-2">
+                <button type="button" className="btn btn-primary" onClick={addNewTask}>Add</button>
             </div>
         </form>
 
